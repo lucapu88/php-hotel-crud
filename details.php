@@ -1,13 +1,9 @@
 <?php
-
-include 'functions.php';
-
 // Pagina dettaglio stanza
-
-$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza'];
+include 'functions.php';
+$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza']; //seleziona tutte le stanze prendendo l'id in get
 $result = esegui_query($sql);
 // visualizzo i dettagli della stanza
-
 include 'layout/head.php';
 ?>
     <main>
@@ -24,13 +20,10 @@ include 'layout/head.php';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-
                     <?php
                     if ($result && $result->num_rows > 0) {
-
                         // output data of each row
                         $row = $result->fetch_assoc(); ?>
-
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Dettagli stanza <?php echo $row['id']; ?></h3>
@@ -45,7 +38,6 @@ include 'layout/head.php';
                                 </ul>
                             </div>
                         </div>
-
                         <?php
                     } elseif ($result) { ?>
                         <p>Non ci sono risultati</p>
@@ -61,7 +53,5 @@ include 'layout/head.php';
         </div>
     </main>
 <?php
-
 include 'layout/footer.php'
-
 ?>

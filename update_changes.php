@@ -1,26 +1,21 @@
 <?php
+//pagina di caricamento dei dati modificati
 
 include 'functions.php';
-
-if(
+if( //se i dati passati in post non sono vuoti e se la funzione di controllo restituisce true
     !empty($_POST) && !empty($_POST['id_stanza']) && controlla_dati_stanza($_POST['numero_stanza'], $_POST['piano'], intval($_POST['letti']))
 ) {
-    // recuperare i dati della stanza da salvare
+    //recuperara i dati della stanza da salvare
     $numero_stanza = intval($_POST['numero_stanza']);
     $piano = intval($_POST['piano']);
     $letti = intval($_POST['letti']);
     $id_stanza = intval($_POST['id_stanza']);
 
-    // salvare la stanza nel db
-
-    $sql = "UPDATE stanze SET room_number = $numero_stanza, floor = $piano, beds = $letti, updated_at = NOW() WHERE id = $id_stanza ";
-    $result = esegui_query($sql);
-    // svuoto la post così se l'utente ricarica la pagina non creo 2 volte la stessa stanza
-
+    $sql = "UPDATE stanze SET room_number = $numero_stanza, floor = $piano, beds = $letti, updated_at = NOW() WHERE id = $id_stanza "; //crea la variabile con la query di modifica delle stanze
+    $result = esegui_query($sql); //esegue la query e la salva in result
 } else {
     $result = false;
 }
-
 // apertura tag html, head e body + inclusione navbar
 include 'layout/head.php';
 ?>
@@ -36,12 +31,10 @@ include 'layout/head.php';
                 </a>
             </div>
         </div>
-
         <div class="row">
             <div class="col-sm-12">
                 <?php
-
-                if ($result) {
+                if ($result) { //se result è true esegue le modifiche
                     ?>
                     <h2>Modifiche avvenute con successo!</h2>
                     <div class="panel panel-default">
@@ -58,7 +51,7 @@ include 'layout/head.php';
                         </div>
                     </div>
                     <?php
-                } else {
+                } else { //altrimenti no
                     ?>
                     <p>Si è verificato un errore</p>
                     <?php

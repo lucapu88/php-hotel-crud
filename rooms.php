@@ -1,9 +1,9 @@
 <?php
+ //pagina con elenco di tutte le stanze
 
 include 'functions.php';
-$sql = "SELECT id, room_number, floor FROM stanze";
+$sql = "SELECT id, room_number, floor FROM stanze"; //query di visualizzazione di tutte le stanze con i relativi dettagli
 $result = esegui_query($sql);
-
 // apertura tag html, head e body + inclusione navbar
 include 'layout/head.php';
 ?>

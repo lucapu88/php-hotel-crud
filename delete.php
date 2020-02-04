@@ -1,12 +1,8 @@
 <?php
-
+//pagina di eliminazione
 include 'functions.php';
-
-// Pagina dettaglio stanza
-
-$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza'];
+$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza']; //seleziona tutte le stanze prendendo l'id in get
 $result = esegui_query($sql);
-
 include 'layout/head.php';
 ?>
     <main>
@@ -18,13 +14,9 @@ include 'layout/head.php';
             </div>
             <div class="row">
                 <div class="col-sm-12">
-
                     <?php
                     if ($result && $result->num_rows > 0) {
-
-                        // output data of each row
                         $row = $result->fetch_assoc(); ?>
-
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Stanza id:  <?php echo $row['id']; ?></h3>
@@ -39,7 +31,6 @@ include 'layout/head.php';
                               </a>
                             </div>
                         </div>
-
                         <?php
                     } elseif ($result) { ?>
                         <p>Non ci sono risultati</p>
@@ -55,7 +46,5 @@ include 'layout/head.php';
         </div>
     </main>
 <?php
-
 include 'layout/footer.php'
-
 ?>

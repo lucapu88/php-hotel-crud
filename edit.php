@@ -1,16 +1,17 @@
 <?php
+//pagina di modifica stanza
 // apertura tag html, head e body + inclusione navbar
 include 'layout/head.php';
 include 'functions.php';
-$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza'];
+$sql = "SELECT * FROM stanze WHERE id = " . $_GET['id_stanza']; //seleziona tutte le stanze prendendo l'id in get
 $result = esegui_query($sql);
 ?>
 <main>
     <div class="container">
         <div class="row">
           <?php
-          if ($result && $result->num_rows > 0) { ?>
-            <?php $row = $result->fetch_assoc(); ?>
+          if ($result && $result->num_rows > 0) { //se result è true e se in result ci sono risultati?>
+            <?php $row = $result->fetch_assoc(); //esegue il tutto?>
             <div class="col-sm-6">
                 <h1>Modifica stanza id: <?php echo $row['id']; ?></h1>
             </div>
@@ -39,10 +40,10 @@ $result = esegui_query($sql);
                   <button type="submit" class="btn btn-success">Salva Modifiche</button>
                 </form>
                 <?php
-            } elseif ($result) { ?>
+            } elseif ($result) { //se result è true ma non ci sono risultati ?>
                 <p>Stanza inesistente</p>
                 <?php
-            } else {
+            } else { //se result è false
                 ?>
                 <p>Si è verificato un errore</p>
                 <?php
@@ -52,9 +53,7 @@ $result = esegui_query($sql);
         </div>
     </div>
 </main>
-
 <?php
 // footer + chiusura body e html
 include 'layout/footer.php'
-
  ?>

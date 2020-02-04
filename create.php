@@ -1,7 +1,7 @@
 <?php
+//pagina di creazione nuova stanza
 // apertura tag html, head e body + inclusione navbar
 include 'layout/head.php';
-
 ?>
 <main>
     <div class="container">
@@ -36,9 +36,7 @@ include 'layout/head.php';
         </div>
     </div>
 </main>
-
 <?php
 // footer + chiusura body e html
 include 'layout/footer.php'
-
  ?>

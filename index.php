@@ -1,9 +1,9 @@
 <?php
+//homepage
 
 include 'functions.php';
 $sql = "SELECT id, room_number, floor FROM stanze";
 $result = esegui_query($sql);
-
 // apertura tag html, head e body + inclusione navbar
 include 'layout/head.php';
 ?>
@@ -17,5 +17,4 @@ include 'layout/head.php';
 <?php
 // footer + chiusura body e html
 include 'layout/footer.php'
-
  ?>
