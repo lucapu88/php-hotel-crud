@@ -13,7 +13,7 @@ if(
 
     // salvare la stanza nel db
 
-    $sql = "UPDATE stanze SET (room_number, floor, beds, created_at, updated_at) VALUES ($numero_stanza, $piano, $letti, NOW(), NOW()) WHERE id = $id_stanza" ;
+    $sql = "UPDATE stanze SET room_number = $numero_stanza, floor = $piano, beds = $letti, updated_at = NOW() WHERE id = $id_stanza ";
     $result = esegui_query($sql);
     // svuoto la post così se l'utente ricarica la pagina non creo 2 volte la stessa stanza
 

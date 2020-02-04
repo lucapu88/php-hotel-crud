@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="index.php">
-          <img src="https://www.boolean.careers/images/common/logo.png" alt="Boolean logo">
+          <img src="https://www.boolean.careers/images/common/logo.png" alt="Boolean logo"> <!--al click ti porta in homepage-->
       </a>
     </div>
 
