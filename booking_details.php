@@ -13,7 +13,7 @@ include 'layout/head.php';
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Dettaglio stanza</h1>
+                    <h1>Dettaglio prenotazioni</h1>
                 </div>
                 <div class="col-sm-6 text-right">
                     <a id="torna-in-home" class="btn btn-success" href="rooms.php">
@@ -29,7 +29,7 @@ include 'layout/head.php';
                       while($row = $result->fetch_assoc()) { ?>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Dettagli prenotazione stanza</h3>
+                                <h3 class="panel-title">Data prenotazione stanza</h3>
                             </div>
                             <div class="panel-body">
                                 <ul>
